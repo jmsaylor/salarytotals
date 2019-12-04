@@ -8,11 +8,11 @@ departmentSalaries = []
 
 personalInfo =[]
 
-var arg = process.argv.slice(2)
+var arg = process.argv.slice(2) //look at switch for possible arguments
 
 //------------------------------------------------------------------------------------
 
-loadDepartments()
+loadDepartments() //load* takes SQL into our arrays 
 
 loadEmployees()
 
@@ -20,7 +20,7 @@ loadSalaries()
 
 loadPersonalInfo()
 
-switch(arg[0]) { 
+switch(arg[0]) {  //takes arguments so usage can be like 'node salarytotals.js department 5' or 'node salarytotals.js employee 10001'
 
     case 'totals':
 
@@ -45,6 +45,10 @@ switch(arg[0]) {
         console.log(salaryTracker(employeeID))
 
         break
+
+    default:
+	displayCurrentTotals()
+	break
 
 
 
